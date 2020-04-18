@@ -47,22 +47,24 @@
   left: 50%;
   background: transparent;
   transform: translate(-50%, -50%);
+  /*text-decoration: none;*/
 }
 
 .btn-custom:hover {
   color: rgba(255, 255, 0, 0.6);
-}
-
-.btn-custom a {
-  color: yellow;
-  transition: all 0.3s ease;
-}
-
-.btn-custom a:hover {
-  color: rgba(255, 255, 0, 0.6);
   text-decoration: none;
-  border-color: rgba(255, 255, 0, 0.6);
 }
+
+/*.btn-custom a {*/
+/*  color: yellow;*/
+/*  transition: all 0.3s ease;*/
+/*}*/
+
+/*.btn-custom a:hover {*/
+/*  color: rgba(255, 255, 0, 0.6);*/
+/*  text-decoration: none;*/
+/*  border-color: rgba(255, 255, 0, 0.6);*/
+/*}*/
 
 .nav-link {
   color: #000;

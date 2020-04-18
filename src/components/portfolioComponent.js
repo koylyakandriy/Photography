@@ -54,12 +54,15 @@ const PortfolioComponent = ({ albums }) => {
                       alt="albums"
                       className="image"
                     />
-                    <button
+                    <Link
                       onClick={() => setAlbum(node)}
                       className="btn-custom text-capitalize position-absolute"
+                      to={`/portfolio/${slug}`}
                     >
-                      <Link to={`/portfolio/${slug}`}>Show more</Link>
-                    </button>
+                      Show more
+                      {/*<Link to={`/portfolio/${slug}`}>*/}
+                      {/*  </Link>*/}
+                    </Link>
                   </div>
                   <h4 className="text-capitalize text-center mt-2 font-weight-lighter">
                     {node.title}
