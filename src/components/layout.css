@@ -1,3 +1,160 @@
+@import url("https://fonts.googleapis.com/css?family=Alex+Brush&display=swap");
+@import "bootstrap.min.css";
+@import "animate.min.css";
+
+.logo {
+  font-family: "Alex Brush", cursive;
+  font-size: 4rem;
+  line-height: 1.2;
+  -webkit-user-select: all; /* Chrome 49+ */
+  -moz-user-select: all; /* Firefox 43+ */
+  -ms-user-select: all; /* No support yet */
+  user-select: all;
+}
+
+.main {
+  min-height: calc(100vh - 313px);
+}
+
+.image {
+  transition: all ease 3s;
+}
+
+.img-container {
+  height: 400px;
+}
+
+.img-container .image{
+  height: 100%;
+}
+
+.img-container:hover .image {
+  transform: scale(1.2);
+}
+
+.img-container:hover .btn-custom {
+  opacity: 1;
+}
+
+.btn-custom {
+  opacity: 0;
+  border: 1px solid yellow;
+  border-radius: 4px;
+  color: yellow;
+  padding: 6px 10px;
+  transition: all ease 0.3s;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+}
+
+.btn-custom:hover {
+  color: rgba(255, 255, 0, 0.6);
+}
+
+.btn-custom a {
+  color: yellow;
+  transition: all 0.3s ease;
+}
+
+.btn-custom a:hover {
+  color: rgba(255, 255, 0, 0.6);
+  text-decoration: none;
+  border-color: rgba(255, 255, 0, 0.6);
+}
+
+.nav-link {
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.nav-link.social-link {
+  height: 34px;
+  width: 34px;
+  padding: 0;
+}
+
+.nav-link.social-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+.text-title {
+  font-size: 1.2rem;
+}
+
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #e58a8a;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #e58a8a;
+}
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 523px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .img-container {
+    height: 220px;
+  }
+}
+
+@media (max-width: 375px) {
+  .logo {
+    font-size: 2rem;
+  }
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -133,6 +290,7 @@ html [type="button"] {
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner,
+[type="button"]:focus,
 button::-moz-focus-inner {
   border-style: none;
   padding: 0;
@@ -142,6 +300,12 @@ button::-moz-focus-inner {
 [type="submit"]:-moz-focusring,
 button:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+.btn.focus,
+.btn:focus,
+.btn-custom:focus {
+  box-shadow: none !important;
+  outline: none;
 }
 fieldset {
   border: 1px solid silver;
