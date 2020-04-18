@@ -11,9 +11,6 @@ export const getDescription = graphql`
       edges {
         node {
           id
-          description {
-            description
-          }
 
           fullDescription {
             fullDescription

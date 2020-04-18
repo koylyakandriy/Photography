@@ -60,8 +60,6 @@ const PortfolioComponent = ({ albums }) => {
                       to={`/portfolio/${slug}`}
                     >
                       Show more
-                      {/*<Link to={`/portfolio/${slug}`}>*/}
-                      {/*  </Link>*/}
                     </Link>
                   </div>
                   <h4 className="text-capitalize text-center mt-2 font-weight-lighter">
