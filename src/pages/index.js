@@ -22,7 +22,7 @@ export const getDescription = graphql`
           avatar {
             fluid {
               src
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }

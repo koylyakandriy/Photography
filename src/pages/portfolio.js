@@ -21,7 +21,7 @@ export const getAlbumList = graphql`
           images {
             fluid {
               src
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -30,14 +30,15 @@ export const getAlbumList = graphql`
   }
 `
 
-const PortfolioPage = ({data}) =>
-    <Layout>
-      <SEO title="PortfolioComponent" />
+const PortfolioPage = ({ data }) => (
+  <Layout>
+    <SEO title="PortfolioComponent" />
 
-      <Router>
-        <PortfolioComponent path="/portfolio" albums={data.albums}/>
-        <Album path="/portfolio/:slug" />
-      </Router>
-    </Layout>
+    <Router>
+      <PortfolioComponent path="/portfolio" albums={data.albums} />
+      <Album path="/portfolio/:slug" />
+    </Router>
+  </Layout>
+)
 
 export default PortfolioPage
