@@ -19,13 +19,12 @@ const PortfolioTemplate = ({ data }) => {
   }
 
   const scrollTo = () => {
-    console.log("click:")
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   return (
     <Layout>
-      <SEO title={capitalizeFirstLetter(title)} description={description} />
+      <SEO title={capitalizeFirstLetter(title)} description={description} image={images[0].fluid}/>
 
       <section className="album pt-4">
         {data ? (
@@ -41,16 +40,16 @@ const PortfolioTemplate = ({ data }) => {
                   <Img fluid={img.fluid} srcSet={img.fluid} />
                 </div>
               ))}
+  
+              <button className="arrow" onClick={scrollTo}>
+                <FaRegArrowAltCircleUp />
+              </button>
             </div>
           </div>
         ) : (
           <Loading />
         )}
       </section>
-
-      <button className="arrow" onClick={scrollTo}>
-        <FaRegArrowAltCircleUp />
-      </button>
     </Layout>
   )
 }
