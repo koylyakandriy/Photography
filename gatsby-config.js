@@ -6,7 +6,10 @@ module.exports = {
   siteMetadata: {
     title: `Photography`,
     description: `Ваш сімейний фотограф, Івано-Франківськ`,
-    author: `@koiliak`,
+    author: `@Ksenia Koziuk`,
+    siteUrl: "http://koziuk.netlify.com",
+    image: `src/images/defPic.jpg`,
+    img: `/defPic.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -40,6 +43,16 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "http://koziuk.netlify.com",
+        sitemap: "http://koziuk.netlify.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    `gatsby-plugin-transition-link`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

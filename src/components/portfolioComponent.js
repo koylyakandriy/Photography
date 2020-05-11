@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react"
 import Img from "gatsby-image"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+
 import Filter from "./filter"
-import { Link } from "@reach/router"
 import Loading from "./Global/loading"
 
 const getCategories = albums => {
   return ["all", ...Array.from(new Set(albums.map(album => album.node.events)))]
 }
 
-const PortfolioComponent = ({ albums }) => {
+const Portfolio = ({ albums }) => {
   const [allAlbums, setAllAlbums] = useState(null)
   const [sortedAlbums, setSortedAlbums] = useState(null)
   const [categories, setCategories] = useState(null)
@@ -28,10 +29,6 @@ const PortfolioComponent = ({ albums }) => {
       const items = tempItems.filter(({ node }) => node.events === category)
       setSortedAlbums(items)
     }
-  }
-
-  const setAlbum = node => {
-    localStorage.setItem("album", JSON.stringify(node))
   }
 
   return (
@@ -54,13 +51,12 @@ const PortfolioComponent = ({ albums }) => {
                       alt="albums"
                       className="image"
                     />
-                    <Link
-                      onClick={() => setAlbum(node)}
+                    <AniLink fade
                       className="btn-custom text-capitalize position-absolute"
                       to={`/portfolio/${slug}`}
                     >
                       Show more
-                    </Link>
+                    </AniLink>
                   </div>
                   <h4 className="text-capitalize text-center mt-2 font-weight-lighter">
                     {node.title}
@@ -77,4 +73,4 @@ const PortfolioComponent = ({ albums }) => {
   )
 }
 
-export default PortfolioComponent
+export default Portfolio
