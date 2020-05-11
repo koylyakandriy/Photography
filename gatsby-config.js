@@ -8,8 +8,7 @@ module.exports = {
     description: `Ваш сімейний фотограф, Івано-Франківськ`,
     author: `@Ksenia Koziuk`,
     siteUrl: "http://koziuk.netlify.com",
-    image: `src/images/defPic.jpg`,
-    img: `/defPic.jpg`,
+    image: `/images/defPic.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
