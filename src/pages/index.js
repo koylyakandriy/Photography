@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,7 +11,6 @@ export const getDescription = graphql`
       edges {
         node {
           id
-
           fullDescription {
             fullDescription
             json
@@ -28,10 +27,13 @@ export const getDescription = graphql`
   }
 `
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <Layout>
-    <SEO title="About" />
-    <About data={data.description} />
+    <SEO title="Про мене" />
+    <StaticQuery
+      query={getDescription}
+      render={({ description }) => <About data={description} />}
+    />
   </Layout>
 )
 

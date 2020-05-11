@@ -10,7 +10,7 @@ const Filter = ({categories, handleItems}) => {
             key={category}
             onClick={() => handleItems(category)}
             type="button"
-            className="btn btn-yellow text-capitalize"
+            className="btn text-capitalize"
           >
             <small>{category}</small>
           </button>

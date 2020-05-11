@@ -14,17 +14,19 @@ const Contact = () => (
                 name="name"
                 id="name"
                 placeholder="Ім'я"
+                required
               />
             </div>
   
             <div className="form-group">
               <label htmlFor="phone">Телефон</label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 name="phone"
                 id="phone"
                 placeholder="+38 099 999 99 99"
+                required
               />
             </div>
 
@@ -35,7 +37,7 @@ const Contact = () => (
                 className="form-control"
                 name="email"
                 id="email"
-                placeholder="Email@email.com"
+                placeholder="Email@mail.com"
               />
             </div>
 
@@ -47,6 +49,7 @@ const Contact = () => (
                 className="form-control"
                 rows="6"
                 placeholder="Ваша опис"
+                required
               />
             </div>
 

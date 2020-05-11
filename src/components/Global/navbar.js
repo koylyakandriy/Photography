@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  
+
   const links = [
     {
       id: 1,
@@ -21,27 +21,33 @@ const Navbar = () => {
       text: "контакти",
     },
   ]
-  
+
   const navbarHandler = () => {
     setIsOpen(!isOpen)
   }
-  
+
   return (
-    <nav className="navbar navbar-expand-sm navbar-light flex-sm-column align-items-center" >
-      <Link to="/" className="navbar-brand animated bounce delay-15s" >
+    <nav className="navbar navbar-expand-sm navbar-light flex-sm-column align-items-center">
+      <AniLink fade to="/" className="navbar-brand animated bounce delay-15s">
         <span className="logo">Ksenia Koziuk</span>
-      </Link>
+      </AniLink>
       <button className="navbar-toggler" type="button" onClick={navbarHandler}>
         <span className="navbar-toggler-icon" />
       </button>
-      
+
       <div className={`collapse navbar-collapse ${isOpen && "show"} `}>
         <ul className="navbar-nav mx-auto">
           {links.map(link => (
             <li key={link.id} className="nav-item">
-              <Link to={link.path} className="nav-link text-uppercase" activeStyle={{ color: "red" }}>
+              <AniLink
+                duration={0.3}
+                fade
+                to={link.path}
+                className="nav-link text-uppercase"
+                activeStyle={{ color: "red" }}
+              >
                 {link.text}
-              </Link>
+              </AniLink>
             </li>
           ))}
         </ul>

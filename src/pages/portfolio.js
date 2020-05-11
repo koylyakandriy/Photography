@@ -1,15 +1,13 @@
 import React from "react"
-import { Router } from "@reach/router"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PortfolioComponent from "../components/portfolioComponent"
-import Album from "../components/album"
+import Portfolio from "../components/portfolioComponent"
 
 export const getAlbumList = graphql`
   {
-    albums: allContentfulPhotoAlbums {
+    albums: allContentfulPhotoAlbums(sort: {fields: [createdAt], order: DESC}) {
       edges {
         node {
           id
@@ -32,12 +30,8 @@ export const getAlbumList = graphql`
 
 const PortfolioPage = ({ data }) => (
   <Layout>
-    <SEO title="PortfolioComponent" />
-
-    <Router>
-      <PortfolioComponent path="/portfolio" albums={data.albums} />
-      <Album path="/portfolio/:slug" />
-    </Router>
+    <SEO title="Портфоліо" />
+      <Portfolio path="/portfolio" albums={data.albums} />
   </Layout>
 )
 
