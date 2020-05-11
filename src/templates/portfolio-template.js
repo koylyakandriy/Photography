@@ -24,7 +24,7 @@ const PortfolioTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={capitalizeFirstLetter(title)} description={description} image={images[0].fluid}/>
+      <SEO title={capitalizeFirstLetter(title)} description={description}/>
 
       <section className="album pt-4">
         {data ? (
