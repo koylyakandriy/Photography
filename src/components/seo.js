@@ -21,7 +21,6 @@ function SEO({ description, lang, meta, title, image }) {
             description
             author
             siteUrl
-            image
           }
         }
       }
@@ -78,7 +77,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: `twitter:image`,
-          content: image || site.siteMetadata.siteUrl + site.siteMetadata.image,
+          content: site.siteMetadata.siteUrl + image || site.siteMetadata.siteUrl + defaultImg,
         },
       ].concat(meta)}
     />
