@@ -56,7 +56,7 @@ function SEO({ description, lang, meta, title}) {
         },
         {
           property: `og:image`,
-          content: site.siteMetadata.siteUrl + site.siteMetadata.img,
+          content: site.siteMetadata.siteUrl + site.siteMetadata.image,
         },
         //Twitter
         {
